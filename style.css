@@ -1,17 +1,605 @@
 
-body {
-  background: #071c13;
-  color: #7ee2a8;
-  font-family: Arial, sans-serif;
-  text-align: center;
-  padding: 80px 20px;
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&family=Quicksand:wght@400;500;600;700&display=swap');
+
+:root {
+  --cream: #fff9f5;
+  --pink: #f4b7ce;
+  --pink-dark: #a64c78;
+  --lavender: #e7dcfa;
+  --lavender-dark: #72549d;
+  --green: #b9d8a5;
+  --green-dark: #385d42;
+  --ink: #37364d;
+  --white: #ffffff;
+  --shadow: 0 7px 0 rgba(80, 63, 94, 0.08);
 }
 
-button {
-  background: #7ee2a8;
-  color: #071c13;
-  border: none;
-  padding: 12px 20px;
-  border-radius: 8px;
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+}
+
+body {
+  margin: 0;
+  background: var(--cream);
+  color: var(--ink);
+  font-family: 'Nunito', sans-serif;
+  line-height: 1.7;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible {
+  outline: 3px solid var(--lavender-dark);
+  outline-offset: 4px;
+}
+
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 14px 6%;
+  background: rgba(255, 249, 245, 0.96);
+  border-bottom: 2px solid #f1e5ed;
+}
+
+.logo {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 1.45rem;
+  font-weight: 800;
+  color: var(--green-dark);
+  white-space: nowrap;
+}
+
+.logo-icon {
+  margin-right: 6px;
+}
+
+.navbar nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 22px;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.navbar nav a:hover {
+  color: var(--pink-dark);
+}
+
+.nav-button {
+  padding: 9px 15px;
+  background: var(--lavender);
+  border-radius: 12px;
+  font-weight: 800;
+  font-size: 0.85rem;
+}
+
+.hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  min-height: 475px;
+  display: grid;
+  place-items: center;
+  padding: 65px 24px 0;
+  background: linear-gradient(
+    180deg,
+    #e9ddfc 0%,
+    #f7dce9 58%,
+    #d8e9c5 100%
+  );
+  text-align: center;
+}
+
+.hero::before,
+.hero::after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  bottom: -50px;
+  width: 65%;
+  height: 150px;
+  border-radius: 50% 50% 0 0;
+  background: #b9d8a5;
+}
+
+.hero::before {
+  left: -15%;
+  transform: rotate(-7deg);
+}
+
+.hero::after {
+  right: -15%;
+  background: #a8ca98;
+  transform: rotate(7deg);
+}
+
+.hero-content {
+  max-width: 650px;
+  padding-bottom: 115px;
+}
+
+.eyebrow {
+  color: var(--lavender-dark);
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.hero h1,
+.section h2 {
+  font-family: 'Quicksand', sans-serif;
+  line-height: 1.2;
+}
+
+.hero h1 {
+  margin: 12px 0;
+  font-size: clamp(2.8rem, 7vw, 5.2rem);
+  letter-spacing: -2px;
+  color: var(--green-dark);
+}
+
+.hero h1 span {
+  color: var(--pink-dark);
+}
+
+.hero-description {
+  max-width: 510px;
+  margin: 18px auto 25px;
+  font-size: 1.08rem;
+}
+
+.button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  border: 2px solid var(--ink);
+  border-radius: 12px;
+  padding: 12px 21px;
+  font-weight: 800;
   cursor: pointer;
+  box-shadow: 0 4px 0 var(--ink);
+  transition: transform 150ms, box-shadow 150ms;
+}
+
+.button:hover {
+  transform: translateY(3px);
+  box-shadow: 0 1px 0 var(--ink);
+}
+
+.button-primary {
+  background: var(--pink);
+  color: #533149;
+}
+
+.button-secondary {
+  background: var(--lavender);
+  color: var(--ink);
+}
+
+.hero-note {
+  font-size: 0.8rem;
+  margin-top: 18px;
+}
+
+.hero-decoration {
+  position: absolute;
+  color: white;
+  font-size: 2rem;
+}
+
+.decoration-one { top: 15%; left: 12%; }
+.decoration-two { top: 25%; right: 15%; }
+.decoration-three { bottom: 22%; left: 25%; }
+
+.pixel-garden {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 90px;
+  pointer-events: none;
+}
+
+.pixel-garden span {
+  position: absolute;
+  font-size: 2.5rem;
+}
+
+.garden-sun { top: -350px; right: 12%; color: #fff0a8; }
+.garden-cloud { top: -55px; color: white; opacity: 0.85; }
+.cloud-one { left: 10%; }
+.cloud-two { right: 25%; }
+.garden-flower { bottom: 12px; }
+.flower-one { left: 12%; }
+.flower-two { left: 27%; }
+.flower-three { right: 18%; }
+.garden-mushroom { bottom: 10px; left: 44%; }
+.garden-frog { bottom: 4px; right: 37%; }
+.garden-butterfly { bottom: 42px; right: 9%; }
+.garden-grass {
+  bottom: -9px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  letter-spacing: 9px;
+  font-size: 2.3rem !important;
+}
+
+.section {
+  padding: 75px 7%;
+}
+
+.section-heading {
+  text-align: center;
+  max-width: 650px;
+  margin: 0 auto 35px;
+}
+
+.section-heading h2,
+.section h2 {
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+}
+
+.section-heading h2 span {
+  color: var(--pink-dark);
+}
+
+.section-heading > p:last-child {
+  color: #777086;
+}
+
+.discovery-grid,
+.species-grid,
+.ecosystem-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.discovery-card,
+.species-card,
+.ecosystem-card {
+  min-width: 0;
+  border: 2px solid #eee2ee;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+.discovery-card {
+  padding: 24px 20px;
+  transition: transform 180ms;
+}
+
+.discovery-card:hover,
+.species-card:hover {
+  transform: translateY(-5px);
+}
+
+.pink-card { background: #fce8f0; }
+.green-card { background: #eaf3e3; }
+.purple-card { background: #eee6fb; }
+.yellow-card { background: #fff1cf; }
+
+.card-emoji {
+  display: block;
+  font-size: 2.8rem;
+}
+
+.discovery-card h3,
+.species-card h3,
+.ecosystem-card h3 {
+  margin: 12px 0 6px;
+  font-size: 1.13rem;
+}
+
+.discovery-card p,
+.ecosystem-card p {
+  font-size: 0.9rem;
+}
+
+.card-link {
+  display: inline-block;
+  margin-top: 10px;
+  color: var(--green-dark);
+  font-size: 0.85rem;
+  font-weight: 800;
+}
+
+.species-section {
+  background: #f5eef9;
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  max-width: 480px;
+  margin: 0 auto 35px;
+  padding: 10px 16px;
+  border: 2px solid #ded1ed;
+  border-radius: 14px;
+  background: white;
+}
+
+.search-box span {
+  font-size: 1.5rem;
+}
+
+.search-box input {
+  width: 100%;
+  min-width: 0;
+  border: 0;
+  outline: none;
+  background: transparent;
+  color: var(--ink);
+}
+
+.species-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.species-card {
+  background: white;
+  transition: transform 180ms;
+}
+
+.species-art {
+  display: grid;
+  place-items: center;
+  min-height: 140px;
+  font-size: 4.2rem;
+  background-image: radial-gradient(#ffffff65 1px, transparent 1px);
+  background-size: 12px 12px;
+}
+
+.art-butterfly { background-color: #f7d4e5; }
+.art-panda { background-color: #dcebcf; }
+.art-whale { background-color: #d5e6f7; }
+.art-flower { background-color: #e7dafa; }
+
+.species-info {
+  padding: 18px;
+}
+
+.species-type {
+  color: var(--lavender-dark);
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.species-info h3 {
+  font-size: 1rem;
+}
+
+.species-info p {
+  font-size: 0.82rem;
+}
+
+.species-info em {
+  color: #777086;
+}
+
+.species-fact {
+  min-height: 66px;
+}
+
+.learn-button {
+  padding: 8px 10px;
+  border: 2px solid #c6b1e3;
+  border-radius: 10px;
+  background: var(--lavender);
+  color: var(--ink);
+  font-weight: 800;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+.empty-message {
+  text-align: center;
+  padding: 25px;
+}
+
+.curiosity-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 35px;
+  margin: 55px 7%;
+  padding: 40px;
+  border: 2px dashed #c7b4df;
+  border-radius: 24px;
+  background: #f1e8fb;
+}
+
+.curiosity-copy {
+  max-width: 550px;
+}
+
+.curiosity-art {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 2.8rem;
+}
+
+.ecosystem-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.ecosystem-card {
+  padding: 24px;
+  background: #eaf3e3;
+}
+
+.ecosystem-card:nth-child(2) { background: #e0edf8; }
+.ecosystem-card:nth-child(3) { background: #fff0d5; }
+
+.ecosystem-card > span {
+  font-size: 2.8rem;
+}
+
+.field-notes-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 25px;
+  background: #f9e4ed;
+}
+
+.field-notes-section > div {
+  max-width: 600px;
+}
+
+#observation-message {
+  width: 100%;
+  margin: 0;
+  font-weight: 800;
+}
+
+.footer {
+  padding: 35px 20px;
+  background: #e5dcf5;
+  text-align: center;
+}
+
+.footer-small {
+  font-size: 0.8rem;
+}
+
+dialog {
+  width: min(90%, 450px);
+  padding: 0;
+  border: 2px solid #c6b1e3;
+  border-radius: 20px;
+  color: var(--ink);
+  background: var(--cream);
+  box-shadow: 0 15px 60px #37364d35;
+}
+
+dialog::backdrop {
+  background: #29203980;
+  backdrop-filter: blur(4px);
+}
+
+.dialog-content {
+  padding: 30px;
+  text-align: center;
+}
+
+@media (max-width: 950px) {
+  .navbar {
+    flex-wrap: wrap;
+  }
+
+  .navbar nav {
+    order: 3;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .discovery-grid,
+  .species-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .navbar {
+    padding: 12px 5%;
+    gap: 12px;
+  }
+
+  .logo {
+    font-size: 1.2rem;
+  }
+
+  .nav-button {
+    font-size: 0.75rem;
+    padding: 7px 9px;
+  }
+
+  .navbar nav {
+    gap: 16px;
+    font-size: 0.82rem;
+  }
+
+  .hero {
+    min-height: 480px;
+    padding-top: 45px;
+  }
+
+  .hero-content {
+    padding-bottom: 100px;
+  }
+
+  .hero-description {
+    font-size: 0.95rem;
+  }
+
+  .section {
+    padding: 50px 5%;
+  }
+
+  .discovery-grid,
+  .species-grid,
+  .ecosystem-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .discovery-card {
+    padding: 20px;
+  }
+
+  .species-art {
+    min-height: 115px;
+  }
+
+  .curiosity-section {
+    margin: 25px 5%;
+    padding: 25px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .field-notes-section {
+    align-items: flex-start;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition: none !important;
+  }
 }
