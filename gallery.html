@@ -1,0 +1,35 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Toffu Biota — Asset Garden</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="section">
+    <div class="section-heading">
+      <p class="eyebrow">THE CREATIVE WORKSHOP</p>
+      <h2>Your Asset Garden 🌱</h2>
+      <p>Browse your pixel-art collection and choose your favourites.</p>
+    </div>
+
+    <label class="search-box">
+      <span>⌕</span>
+      <input id="asset-search" type="search"
+        placeholder="Search filenames..."
+        aria-label="Search asset filenames">
+    </label>
+
+    <p id="asset-count" aria-live="polite"></p>
+    <div class="asset-grid" id="asset-grid"></div>
+    <p id="asset-error" hidden>
+      Couldn't load the asset list. Check that asset-list.json exists
+      and run the local server from your project folder.
+    </p>
+  </main>
+
+  <script src="gallery.js" defer></script>
+</body>
+</html>

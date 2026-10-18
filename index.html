@@ -12,10 +12,14 @@
 </head>
 <body>
   <header class="navbar">
-    <a class="logo" href="#" aria-label="Toffu Biota home">
-      <span class="logo-icon">🌱</span>
-      Toffu Biota
-    </a>
+    
+<a class="logo" href="#home" aria-label="Toffu Biota home">
+  <img
+    class="brand-logo"
+    src="assets/official logo/toffu biota logo.jpg"
+    alt="Toffu Biota"
+  >
+</a>
 
     <nav aria-label="Main navigation">
       <a href="#home">Home</a>
@@ -47,18 +51,38 @@
         <p class="hero-note">Made for the endlessly curious ♡</p>
       </div>
 
-      <div class="pixel-garden" aria-label="A tiny garden illustration">
-        <span class="garden-sun">☼</span>
-        <span class="garden-cloud cloud-one">☁</span>
-        <span class="garden-cloud cloud-two">☁</span>
-        <span class="garden-flower flower-one">🌷</span>
-        <span class="garden-flower flower-two">🌼</span>
-        <span class="garden-flower flower-three">🌸</span>
-        <span class="garden-mushroom">🍄</span>
-        <span class="garden-frog">🐸</span>
-        <span class="garden-butterfly">🦋</span>
-        <span class="garden-grass">🌿 🌱 🍀 🌿 🌱</span>
-      </div>
+     
+<div class="pixel-garden" aria-label="A tiny pixel-art garden">
+  <img class="garden-sun" src="assets/forest/sun.png" alt="">
+
+  <img class="garden-cloud cloud-one"
+       src="assets/forest/cloud1.png" alt="">
+
+  <img class="garden-cloud cloud-two"
+       src="assets/forest/cloud3.png" alt="">
+
+  <img class="garden-flower flower-one"
+       src="assets/plants and flowers/1.png" alt="">
+
+  <img class="garden-flower flower-two"
+       src="assets/plants and flowers/10.png" alt="">
+
+  <img class="garden-flower flower-three"
+       src="assets/plants and flowers/2.png" alt="">
+
+  <img class="garden-mushroom"
+       src="assets/forest/Honey_Agaric.png" alt="">
+
+  <img class="garden-frog"
+       src="assets/animales/frog.png" alt="">
+
+  <img class="garden-butterfly"
+       src="assets/animales/birdies.png" alt="">
+
+  <img class="garden-grass"
+       src="assets/forest/Tall Grass.png" alt="">
+</div>
+
     </section>
 
     <section class="section discover-section" id="discover">
@@ -70,28 +94,37 @@
 
       <div class="discovery-grid">
         <a class="discovery-card pink-card" href="#species">
-          <span class="card-emoji">🐛</span>
+          <img class="discovery-icon"
+           src="assets/+++/butterfly.png"
+           alt="">
           <h3>The Wild Index</h3>
           <p>Meet the plants, animals, fungi, and tiny organisms sharing our world.</p>
           <span class="card-link">Meet the locals ↗</span>
         </a>
 
         <a class="discovery-card green-card" href="#ecosystems">
-          <span class="card-emoji">🌳</span>
+          <img class="discovery-icon"
+          src="assets/+++/compas.png"
+          alt="">
           <h3>Little Worlds</h3>
           <p>Travel from lush forests to deep oceans and discover how life connects.</p>
           <span class="card-link">Explore habitats ↗</span>
         </a>
 
         <a class="discovery-card purple-card" href="#curiosity">
-          <span class="card-emoji">🔍</span>
+          <img class="discovery-icon"
+          src="assets/+++/looking glass.png"
+          alt="">
           <h3>Curiosity Corner</h3>
           <p>Strange facts, tiny lessons, and natural wonders that sound made up.</p>
           <span class="card-link">Feed your curiosity ↗</span>
         </a>
 
         <a class="discovery-card yellow-card" href="#field-notes">
-          <span class="card-emoji">📔</span>
+          <img class="discovery-icon"
+           src="assets/+++/notebook1.png"
+           alt="">
+      
           <h3>Field Notes</h3>
           <p>Collect observations and start noticing the magic in everyday nature.</p>
           <span class="card-link">Start observing ↗</span>
@@ -99,78 +132,119 @@
       </div>
     </section>
 
-    <section class="section species-section" id="species">
-      <div class="section-heading">
-        <p class="eyebrow">YOUR NEIGHBOURS ON EARTH</p>
-        <h2>Little beings, big stories <span>♡</span></h2>
-        <p>Every species has something worth knowing.</p>
+  
+<section class="section species-section" id="species">
+  <div class="section-heading">
+    <p class="eyebrow">YOUR NEIGHBOURS ON EARTH</p>
+    <h2>Little beings, big stories <span>♡</span></h2>
+    <p>Every species has something worth knowing.</p>
+  </div>
+
+  <label class="search-box">
+    <span aria-hidden="true">⌕</span>
+    <input
+      id="species-search"
+      type="search"
+      placeholder="Find a fox, bunny, owl..."
+      aria-label="Search species"
+    >
+  </label>
+
+  <div class="species-grid" id="species-grid">
+
+    <!-- FOX -->
+    <article class="species-card"
+      data-search="fox mammal forest predator">
+      <div class="species-art art-butterfly">
+        <img src="assets/animales/fox.png"
+             alt="Pixel-art fox" loading="lazy">
       </div>
-
-      <label class="search-box">
-        <span aria-hidden="true">⌕</span>
-        <input id="species-search" type="search"
-          placeholder="Find a butterfly, mushroom, whale..."
-          aria-label="Search species">
-      </label>
-
-      <div class="species-grid" id="species-grid">
-        <article class="species-card" data-search="monarch butterfly insect pollinator migration">
-          <div class="species-art art-butterfly">🦋</div>
-          <div class="species-info">
-            <span class="species-type">INSECT</span>
-            <h3>Monarch Butterfly</h3>
-            <p><em>Danaus plexippus</em></p>
-            <p class="species-fact">Some monarch populations migrate thousands of kilometres.</p>
-            <button class="learn-button" data-fact="Monarch butterflies use environmental cues, including the position of the sun, to help navigate during migration.">
-              Discover a fact ↗
-            </button>
-          </div>
-        </article>
-
-        <article class="species-card" data-search="red panda mammal forest bamboo">
-          <div class="species-art art-panda">🐾</div>
-          <div class="species-info">
-            <span class="species-type">MAMMAL</span>
-            <h3>Red Panda</h3>
-            <p><em>Ailurus fulgens</em></p>
-            <p class="species-fact">Red pandas are adapted to life in forest canopies.</p>
-            <button class="learn-button" data-fact="Red pandas have a false thumb, formed from an extended wrist bone, that helps them grip bamboo.">
-              Discover a fact ↗
-            </button>
-          </div>
-        </article>
-
-        <article class="species-card" data-search="blue whale ocean mammal marine">
-          <div class="species-art art-whale">🐋</div>
-          <div class="species-info">
-            <span class="species-type">MARINE MAMMAL</span>
-            <h3>Blue Whale</h3>
-            <p><em>Balaenoptera musculus</em></p>
-            <p class="species-fact">The blue whale is the largest animal known to have lived.</p>
-            <button class="learn-button" data-fact="Blue whales feed mainly on krill, tiny shrimp-like animals, and can consume enormous quantities during feeding season.">
-              Discover a fact ↗
-            </button>
-          </div>
-        </article>
-
-        <article class="species-card" data-search="rafflesia flower plant parasitic">
-          <div class="species-art art-flower">🌺</div>
-          <div class="species-info">
-            <span class="species-type">FLOWERING PLANT</span>
-            <h3>Rafflesia</h3>
-            <p><em>Rafflesia arnoldii</em></p>
-            <p class="species-fact">Some Rafflesia flowers grow to around a metre across.</p>
-            <button class="learn-button" data-fact="Rafflesia species are parasitic plants that depend on host vines and do not have the familiar leaves, stems, and roots of most plants.">
-              Discover a fact ↗
-            </button>
-          </div>
-        </article>
+      <div class="species-info">
+        <span class="species-type">MAMMAL</span>
+        <h3>Red Fox</h3>
+        <p><em>Vulpes vulpes</em></p>
+        <p class="species-fact">
+          Foxes use their excellent hearing to help locate prey.
+        </p>
+        <button class="learn-button"
+          data-fact="Red foxes can use sound to pinpoint small animals moving beneath grass or snow.">
+          Discover a fact ↗
+        </button>
       </div>
+    </article>
 
-      <p class="empty-message" id="empty-message" hidden>
-        No little neighbours found! Try another search. 🌱
-      </p>
-    </section>
+    <!-- BUNNY -->
+    <article class="species-card"
+      data-search="bunny rabbit mammal herbivore">
+      <div class="species-art art-panda">
+        <img src="assets/animales/bunny.png"
+             alt="Pixel-art bunny" loading="lazy">
+      </div>
+      <div class="species-info">
+        <span class="species-type">MAMMAL</span>
+        <h3>Rabbit</h3>
+        <p><em>Oryctolagus cuniculus</em></p>
+        <p class="species-fact">
+          Rabbits have eyes positioned on the sides of their heads,
+          giving them a wide field of view.
+        </p>
+        <button class="learn-button"
+          data-fact="The position of a rabbit's eyes helps it detect potential danger from many directions.">
+          Discover a fact ↗
+        </button>
+      </div>
+    </article>
+
+    <!-- OWL -->
+    <article class="species-card"
+      data-search="owl bird nocturnal forest">
+      <div class="species-art art-whale">
+        <img src="assets/animales/owl.png"
+             alt="Pixel-art owl" loading="lazy">
+      </div>
+      <div class="species-info">
+        <span class="species-type">BIRD</span>
+        <h3>Owl</h3>
+        <p><em>Strigiformes</em></p>
+        <p class="species-fact">
+          Many owls have specialized feathers that help them fly quietly.
+        </p>
+        <button class="learn-button"
+          data-fact="Specialized feather structures help many owl species reduce the sound of their flight.">
+          Discover a fact ↗
+        </button>
+      </div>
+    </article>
+
+    <!-- FROG -->
+    <article class="species-card"
+      data-search="frog amphibian pond wetlands">
+      <div class="species-art art-flower">
+        <img src="assets/animales/frog.png"
+             alt="Pixel-art frog" loading="lazy">
+      </div>
+      <div class="species-info">
+        <span class="species-type">AMPHIBIAN</span>
+        <h3>Frog</h3>
+        <p><em>Anura</em></p>
+        <p class="species-fact">
+          Many frogs begin life as aquatic tadpoles before transforming
+          into adults.
+        </p>
+        <button class="learn-button"
+          data-fact="Many frogs undergo metamorphosis, changing from aquatic tadpoles into adults with a different body form.">
+          Discover a fact ↗
+        </button>
+      </div>
+    </article>
+
+  </div>
+
+  <p class="empty-message" id="empty-message" hidden>
+    No little neighbours found! Try another search. 🌱
+  </p>
+</section>
+
 
     <section class="section curiosity-section" id="curiosity">
       <div class="curiosity-copy">
@@ -183,54 +257,180 @@
           Another tiny wonder! ✿
         </button>
       </div>
-      <div class="curiosity-art" aria-hidden="true">
-        <span>🍄</span>
-        <span>🌼</span>
-        <span>🐌</span>
-        <span>🌿</span>
-      </div>
+      
+<div class="curiosity-art" aria-hidden="true">
+  <img src="assets/forest/Honey_Fungus.png" alt="">
+  <img src="assets/plants and flowers/3.png" alt="">
+  <img src="assets/animales/snail.png" alt="">
+  <img src="assets/forest/Bonsai.png" alt="">
+</div>
+
     </section>
 
     <section class="section ecosystems-section" id="ecosystems">
       <div class="section-heading">
         <p class="eyebrow">LIFE IS CONNECTED</p>
-        <h2>Choose your little world 🌎</h2>
+        <h2>Choose your little world
+         <img class="heading-icon"
+       src="assets/+++/earth.png"
+       alt="">
+        </h2>
         <p>Different habitats, countless ways to be alive.</p>
       </div>
       <div class="ecosystem-grid">
+        
+<article class="ecosystem-card">
+  <img
+    class="ecosystem-image"
+    src="assets/forest/Weeping Willow1.png"
+    alt="Pixel-art weeping willow tree"
+    loading="lazy"
+  >
+
+  <h3>Forest</h3>
+  <p>Layers of trees, fungi, insects, and hidden life.</p>
+</article>
+
         <article class="ecosystem-card">
-          <span>🌲</span>
-          <h3>Forest</h3>
-          <p>Layers of trees, fungi, insects, and hidden life.</p>
-        </article>
-        <article class="ecosystem-card">
-          <span>🪸</span>
+          <img class="ecosystem-image"
+          src="assets/+++/ocean.png"
+          alt="Pixel-art ocean"
+          loading="lazy">
           <h3>Ocean</h3>
           <p>A vast blue world filled with remarkable diversity.</p>
         </article>
         <article class="ecosystem-card">
-          <span>🌵</span>
+          <img class="ecosystem-image"
+     src="assets/+++/desert.png"
+     alt="Pixel-art desert"
+     loading="lazy">
           <h3>Desert</h3>
           <p>Life with extraordinary ways of handling scarce water.</p>
         </article>
       </div>
     </section>
 
-    <section class="section field-notes-section" id="field-notes">
-      <div>
-        <p class="eyebrow">YOUR FIRST LITTLE OBSERVATION</p>
-        <h2>The world is your field notebook. 📔</h2>
-        <p>Have you noticed a bird, an interesting leaf, or a tiny insect today?</p>
-      </div>
-      <button class="button button-secondary" id="observation-button">
-        I spotted something! ✿
-      </button>
-      <p id="observation-message" aria-live="polite"></p>
-    </section>
+    
+<section class="section field-notes-section" id="field-notes">
+  <div class="explorer-letter-heading">
+    <p class="eyebrow">✧ THE EXPLORER'S POST OFFICE ✧</p>
+    <h2>Dear Toffu Biota... <span>♡</span></h2>
+    <p>
+      Have you met a curious creature, spotted a lovely leaf,
+      or discovered something tiny and wonderful?
+      Leave a little letter about it here!
+    </p>
+    <p class="letter-privacy">
+      🌱 No real name, email, or exact location needed.
+      Share only what you're comfortable sharing.
+    </p>
+  </div>
+
+  <form
+    class="explorer-form"
+    action="https://formspree.io/f/moejrgwn"
+    method="POST"
+  >
+    <label for="explorer-nickname">
+      Your explorer nickname <span>(optional)</span>
+    </label>
+    <input
+      id="explorer-nickname"
+      name="nickname"
+      type="text"
+      maxlength="40"
+      placeholder="e.g. Little Acorn"
+    >
+
+    <label for="discovery-type">What did you discover?</label>
+    <select id="discovery-type" name="discovery_type" required>
+      <option value="" disabled selected>Choose your little neighbour...</option>
+      <option>Animal</option>
+      <option>Plant or flower</option>
+      <option>Fungus or mushroom</option>
+      <option>Insect or tiny creature</option>
+      <option>Something else in nature</option>
+    </select>
+
+    <label for="discovery-place">
+      Where did you spot it? <span>(optional, broad area only)</span>
+    </label>
+    <select id="discovery-place" name="habitat">
+      <option value="">Choose a habitat...</option>
+      <option>Garden or park</option>
+      <option>Forest or woodland</option>
+      <option>Beach or ocean</option>
+      <option>Desert or dry land</option>
+      <option>Near my home</option>
+      <option>Somewhere else</option>
+    </select>
+
+    <label for="discovery-title">Give your discovery a title</label>
+    <input
+      id="discovery-title"
+      name="discovery_title"
+      type="text"
+      maxlength="80"
+      placeholder="e.g. The tiniest yellow flower"
+      required
+    >
+
+    <label for="discovery-story">Tell us your little story...</label>
+    <textarea
+      id="discovery-story"
+      name="observation"
+      rows="6"
+      maxlength="2000"
+      placeholder="What did you notice? What did it look like? Did anything surprise you?"
+      required
+    ></textarea>
+
+    <label class="explorer-consent">
+      <input type="checkbox" name="sharing_confirmation" value="confirmed" required>
+      <span>
+        I understand that my letter will be sent to the Toffu Biota
+        site owner and may be stored by the form service.
+        I've left out private information.
+      </span>
+    </label>
+
+    <!-- Spam-trap field: ordinary visitors should leave this empty. -->
+    <div class="form-honeypot" aria-hidden="true">
+      <label for="explorer-website">Leave this field empty</label>
+      <input
+        id="explorer-website"
+        name="_gotcha"
+        type="text"
+        tabindex="-1"
+        autocomplete="off"
+      >
+    </div>
+
+    <button class="button button-primary explorer-submit" type="submit">
+      Send my little letter ♡
+    </button>
+
+    <p class="form-footnote">
+      Your letter doesn't need to be perfect. Curiosity is enough. ✿
+    </p>
+  </form>
+</section>
+
   </main>
 
   <footer class="footer">
-    <a class="logo" href="#home">🌱 Toffu Biota</a>
+   
+
+<a class="logo footer-logo" href="#home"
+   aria-label="Toffu Biota home">
+  <img
+    class="brand-logo"
+    src="assets/official logo/toffu biota logo.jpg"
+    alt="Toffu Biota"
+  >
+</a>
+    
+      
     <p>Explore gently. Learn endlessly. Protect what grows. ♡</p>
     <p class="footer-small">A little love letter to the living world.</p>
   </footer>
@@ -241,6 +441,6 @@
       <p id="dialog-fact"></p>
       <button class="button button-primary" id="close-dialog">Lovely! ♡</button>
     </div>
-  </dialog>
+  </dialog>
 </body>
 </html>

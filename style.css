@@ -1,5 +1,5 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&family=Quicksand:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Dancing+Script:wght@500;600;700&family=Nunito:wght@400;500;600;700;800&family=Quicksand:wght@400;500;600;700&display=swap');
 
 :root {
   --cream: #fff9f5;
@@ -158,14 +158,18 @@ input:focus-visible {
 
 .hero h1 {
   margin: 12px 0;
-  font-size: clamp(2.8rem, 7vw, 5.2rem);
-  letter-spacing: -2px;
+  font-family: 'Dancing Script', cursive;
+  font-size: clamp(3.8rem, 8vw, 6.2rem);
+  font-weight: 700;
+  line-height: 1.08;
+  letter-spacing: 0;
   color: var(--green-dark);
 }
 
 .hero h1 span {
   color: var(--pink-dark);
 }
+
 
 .hero-description {
   max-width: 510px;
@@ -217,39 +221,92 @@ input:focus-visible {
 .decoration-two { top: 25%; right: 15%; }
 .decoration-three { bottom: 22%; left: 25%; }
 
+
+/* Pixel-art garden beneath the hero text */
+
 .pixel-garden {
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
-  height: 90px;
+  height: 115px;
   pointer-events: none;
 }
 
-.pixel-garden span {
+.pixel-garden img {
   position: absolute;
-  font-size: 2.5rem;
+  display: block;
+  object-fit: contain;
+  image-rendering: pixelated;
 }
 
-.garden-sun { top: -350px; right: 12%; color: #fff0a8; }
-.garden-cloud { top: -55px; color: white; opacity: 0.85; }
-.cloud-one { left: 10%; }
-.cloud-two { right: 25%; }
-.garden-flower { bottom: 12px; }
-.flower-one { left: 12%; }
-.flower-two { left: 27%; }
-.flower-three { right: 18%; }
-.garden-mushroom { bottom: 10px; left: 44%; }
-.garden-frog { bottom: 4px; right: 37%; }
-.garden-butterfly { bottom: 42px; right: 9%; }
-.garden-grass {
-  bottom: -9px;
-  left: 0;
-  right: 0;
-  text-align: center;
-  letter-spacing: 9px;
-  font-size: 2.3rem !important;
+.garden-sun {
+  width: 64px;
+  height: 64px;
+  top: -340px;
+  right: 12%;
 }
+
+.garden-cloud {
+  width: 100px;
+  height: 55px;
+  top: -55px;
+}
+
+.cloud-one {
+  left: 10%;
+}
+
+.cloud-two {
+  right: 25%;
+}
+
+.garden-flower {
+  width: 58px;
+  height: 65px;
+  bottom: 12px;
+}
+
+.flower-one {
+  left: 12%;
+}
+
+.flower-two {
+  left: 27%;
+}
+
+.flower-three {
+  right: 18%;
+}
+
+.garden-mushroom {
+  width: 65px;
+  height: 65px;
+  bottom: 8px;
+  left: 44%;
+}
+
+.garden-frog {
+  width: 65px;
+  height: 65px;
+  bottom: 2px;
+  right: 37%;
+}
+
+.garden-butterfly {
+  width: 55px;
+  height: 55px;
+  bottom: 42px;
+  right: 9%;
+}
+
+.garden-grass {
+  width: 100%;
+  height: 65px;
+  bottom: -5px;
+  left: 0;
+}
+
 
 .section {
   padding: 75px 7%;
@@ -361,23 +418,40 @@ input:focus-visible {
   color: var(--ink);
 }
 
+
 .species-grid {
+  display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 20px;
+  width: 100%;
+  align-items: stretch;
 }
 
 .species-card {
+  min-width: 0;
+  width: 100%;
+  border: 2px solid #eee2ee;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
   background: white;
   transition: transform 180ms;
 }
 
-.species-art {
-  display: grid;
-  place-items: center;
-  min-height: 140px;
-  font-size: 4.2rem;
-  background-image: radial-gradient(#ffffff65 1px, transparent 1px);
-  background-size: 12px 12px;
+.species-info {
+  min-width: 0;
+  padding: 18px;
 }
+
+.species-art img {
+  display: block;
+  width: 100%;
+  height: 140px;
+  padding: 12px;
+  object-fit: contain;
+  image-rendering: pixelated;
+}
+
 
 .art-butterfly { background-color: #f7d4e5; }
 .art-panda { background-color: #dcebcf; }
@@ -601,5 +675,537 @@ dialog::backdrop {
   *::after {
     scroll-behavior: auto !important;
     transition: none !important;
+  }
+}
+
+.asset-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(145px, 1fr));
+  gap: 16px;
+}
+
+.asset-card {
+  min-width: 0;
+  padding: 12px;
+  border: 2px solid #e7dcfa;
+  border-radius: 14px;
+  background: white;
+  box-shadow: var(--shadow);
+}
+
+.asset-preview {
+  display: grid;
+  place-items: center;
+  height: 145px;
+  overflow: hidden;
+  border-radius: 9px;
+  background-color: #f4edf9;
+  background-image: radial-gradient(#d6c8e5 1px, transparent 1px);
+  background-size: 8px 8px;
+}
+
+.asset-preview img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  image-rendering: pixelated;
+}
+
+.asset-name {
+  overflow-wrap: anywhere;
+  font-size: 0.78rem;
+  margin: 10px 0;
+}
+
+.asset-copy {
+  width: 100%;
+  padding: 7px;
+  border: 1px solid #c6b1e3;
+  border-radius: 8px;
+  background: #e7dcfa;
+  cursor: pointer;
+  font-weight: 800;
+}
+
+.asset-copy:hover {
+  background: #f4b7ce;
+}
+
+/* TOFFU BIOTA — pixel-art world */
+
+
+/* Enchanted pixel-forest hero */
+.hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  min-height: 540px;
+  display: grid;
+  place-items: center;
+  padding: 55px 24px 40px;
+  text-align: center;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255, 249, 245, 0.22) 0%,
+      rgba(247, 220, 233, 0.16) 55%,
+      rgba(185, 216, 165, 0.18) 100%
+    ),
+    url("assets/bgss/background 1.jpg");
+
+  background-size: cover;
+  background-position: center 55%;
+  background-repeat: no-repeat;
+}
+
+/* Remove the old artificial green hills */
+.hero::before,
+.hero::after {
+  display: none;
+}
+
+/* Hide the old row of floating pixel-art decorations */
+.pixel-garden {
+  display: none;
+}
+
+
+/* Pixel-art animal illustrations */
+
+.species-art img {
+  width: 100%;
+  height: 140px;
+  padding: 12px;
+  object-fit: contain;
+  image-rendering: pixelated;
+}
+
+.ecosystem-image {
+  display: block;
+  width: 100%;
+  height: 150px;
+  object-fit: contain;
+  image-rendering: pixelated;
+  margin-bottom: 12px;
+}
+
+.curiosity-art {
+  align-items: center;
+}
+
+.curiosity-art img {
+  width: 75px;
+  height: 75px;
+  object-fit: contain;
+  image-rendering: pixelated;
+}
+.ecosystem-detail {
+  width: 65px;
+  height: 65px;
+  margin: -10px auto 5px;
+}
+
+
+/* A cleaner, storybook-style hero */
+.pixel-garden {
+  display: none;
+}
+
+
+/* =========================================
+   TOFFU BIOTA — whimsical storybook lettering
+   ========================================= */
+
+/* Main handwritten font */
+body {
+  font-family: 'Caveat', cursive;
+  font-size: 21px;
+  line-height: 1.45;
+}
+
+/* Decorative, hand-lettered headings */
+.hero h1,
+.section h2,
+.section-heading h2,
+.curiosity-copy h2,
+.field-notes-section h2 {
+  font-family: 'Dancing Script', cursive;
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: 0;
+}
+
+.hero h1 {
+  font-size: clamp(4rem, 9vw, 7rem);
+  margin: 12px 0 20px;
+  text-shadow: 2px 3px 0 rgba(255, 249, 245, 0.45);
+}
+
+.section h2,
+.section-heading h2 {
+  font-size: clamp(2.7rem, 5vw, 4rem);
+}
+
+/* Little titles on cards */
+.discovery-card h3,
+.species-card h3,
+.ecosystem-card h3 {
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.8rem;
+  font-weight: 700;
+  line-height: 1.15;
+}
+
+/* The little descriptive labels */
+.eyebrow {
+  font-family: 'Caveat', cursive;
+  font-size: 1.35rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+/* Hero paragraph */
+.hero-description {
+  max-width: 540px;
+  font-family: 'Caveat', cursive;
+  font-size: 1.7rem;
+  line-height: 1.4;
+}
+
+/* Navigation and logo */
+.navbar nav {
+  font-family: 'Caveat', cursive;
+  font-size: 1.35rem;
+  font-weight: 700;
+}
+
+.logo {
+  font-family: 'Quicksand', sans-serif;
+}
+
+.nav-button {
+  font-family: 'Caveat', cursive;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+/* Buttons that feel handwritten, but stay readable */
+.button,
+.learn-button,
+.asset-copy {
+  font-family: 'Caveat', cursive;
+  font-size: 1.35rem;
+  font-weight: 700;
+}
+
+.hero-note {
+  font-family: 'Caveat', cursive;
+  font-size: 1.25rem;
+}
+
+/* Discovery cards and ecosystem descriptions */
+.discovery-card p,
+.ecosystem-card p,
+.species-info p {
+  font-family: 'Caveat', cursive;
+  font-size: 1.3rem;
+  line-height: 1.35;
+}
+
+.species-type {
+  font-family: 'Caveat', cursive;
+  font-size: 1.15rem;
+  letter-spacing: 1px;
+}
+
+.card-link {
+  font-family: 'Caveat', cursive;
+  font-size: 1.25rem;
+}
+
+/* Search box */
+.search-box input {
+  font-family: 'Caveat', cursive;
+  font-size: 1.3rem;
+}
+
+.search-box input::placeholder {
+  color: #93869e;
+}
+
+/* Curiosity corner and field notes */
+.curiosity-copy p,
+.field-notes-section p {
+  font-family: 'Caveat', cursive;
+  font-size: 1.4rem;
+}
+
+.footer p {
+  font-family: 'Caveat', cursive;
+  font-size: 1.3rem;
+}
+
+.footer .footer-small {
+  font-size: 1.1rem;
+}
+
+/* Keep the handwriting comfortable on smaller screens */
+@media (max-width: 600px) {
+  .hero h1 {
+    font-size: clamp(3.5rem, 14vw, 5rem);
+  }
+
+  .hero-description {
+    font-size: 1.45rem;
+  }
+
+  .section h2,
+  .section-heading h2 {
+    font-size: 2.8rem;
+  }
+
+  .discovery-card p,
+  .ecosystem-card p,
+  .species-info p {
+    font-size: 1.25rem;
+  }
+}
+
+/* Pixel-art replacements for emoji icons */
+
+.discovery-icon {
+  display: block;
+  width: 76px;
+  height: 76px;
+  margin-bottom: 12px;
+  object-fit: contain;
+  image-rendering: pixelated;
+}
+
+.heading-icon {
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  margin-left: 5px;
+  vertical-align: middle;
+  object-fit: contain;
+  image-rendering: pixelated;
+}
+
+.ecosystem-image {
+  display: block;
+  width: 100%;
+  height: 150px;
+  margin: 0 auto 12px;
+  object-fit: contain;
+  image-rendering: pixelated;
+}
+
+@media (max-width: 600px) {
+  .discovery-icon {
+    width: 68px;
+    height: 68px;
+  }
+
+  .heading-icon {
+    width: 38px;
+    height: 38px;
+  }
+}
+
+/* A bigger little notebook illustration */
+.notebook-heading-icon {
+  width: 76px;
+  height: 76px;
+  margin-left: 10px;
+}
+
+/* Keep it proportional on smaller screens */
+@media (max-width: 600px) {
+  .notebook-heading-icon {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+/* Official Toffu Biota logo */
+.brand-logo {
+  display: block;
+  width: 170px;
+  height: 48px;
+  object-fit: contain;
+  object-position: left center;
+}
+
+/* Keep the navbar tidy */
+.navbar > .logo {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+/* Give the footer logo a little more room */
+.footer-logo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-logo .brand-logo {
+  width: 200px;
+  height: 65px;
+  object-position: center;
+}
+
+/* Smaller screens */
+@media (max-width: 600px) {
+  .brand-logo {
+    width: 135px;
+    height: 42px;
+  }
+
+  .footer-logo .brand-logo {
+    width: 175px;
+    height: 58px;
+  }
+}
+
+/* ✉️ Toffu Biota — Explorer's Post Office */
+
+.explorer-letter-heading {
+  width: 100%;
+  max-width: 680px;
+  margin: 0 auto 30px;
+  text-align: center;
+}
+
+.explorer-letter-heading h2 {
+  font-family: 'Dancing Script', cursive;
+  font-size: clamp(2.8rem, 6vw, 4.2rem);
+  line-height: 1.2;
+  color: var(--ink);
+  margin: 12px 0;
+}
+
+.explorer-letter-heading h2 span {
+  color: var(--pink-dark);
+}
+
+.explorer-letter-heading > p:not(.eyebrow) {
+  max-width: 570px;
+  margin: 12px auto;
+}
+
+.letter-privacy {
+  padding: 12px 16px;
+  border: 1px dashed #c6b1e3;
+  border-radius: 14px;
+  background: #f1e8fb;
+  font-size: 0.9rem;
+}
+
+.explorer-form {
+  width: 100%;
+  max-width: 680px;
+  margin: 0 auto;
+  padding: clamp(20px, 5vw, 38px);
+  border: 2px solid #e8c8dd;
+  border-radius: 22px;
+  background:
+    repeating-linear-gradient(
+      transparent 0,
+      transparent 39px,
+      #f5e6ef 40px
+    ),
+    #fffdfb;
+  box-shadow: 0 8px 0 rgba(80, 63, 94, 0.08);
+}
+
+.explorer-form > label:not(.explorer-consent) {
+  display: block;
+  margin: 20px 0 7px;
+  color: var(--green-dark);
+  font-weight: 800;
+}
+
+.explorer-form label span {
+  color: #81758d;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.explorer-form input:not([type="checkbox"]),
+.explorer-form select,
+.explorer-form textarea {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  padding: 12px 14px;
+  border: 2px solid #e5d8ed;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.94);
+  color: var(--ink);
+  font: inherit;
+  line-height: 1.5;
+}
+
+.explorer-form textarea {
+  resize: vertical;
+}
+
+.explorer-form input:focus,
+.explorer-form select:focus,
+.explorer-form textarea:focus {
+  border-color: var(--lavender-dark);
+  outline: 3px solid #e7dcfa;
+  outline-offset: 2px;
+}
+
+.explorer-form ::placeholder {
+  color: #a39aaa;
+  opacity: 1;
+}
+
+.explorer-consent {
+  display: flex;
+  align-items: flex-start;
+  gap: 11px;
+  margin: 24px 0;
+  font-size: 0.88rem;
+  line-height: 1.6;
+}
+
+.explorer-consent input {
+  flex: 0 0 auto;
+  width: 18px;
+  height: 18px;
+  margin-top: 4px;
+  accent-color: var(--lavender-dark);
+}
+
+.explorer-submit {
+  width: 100%;
+  margin-top: 8px;
+}
+
+.form-footnote {
+  margin: 16px 0 0;
+  text-align: center;
+  color: #81758d;
+  font-size: 0.85rem;
+}
+
+.form-honeypot {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+@media (max-width: 600px) {
+  .explorer-form {
+    padding: 20px 16px;
   }
 }
