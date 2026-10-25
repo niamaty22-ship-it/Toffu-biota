@@ -8,6 +8,9 @@ Toffu Biota is an interactive, pixel-art-inspired website designed to celebrate 
 
 The idea is simple: learning about the natural world shouldn't feel like reading a textbook all the time. Sometimes, it can start with a little curiosity and a world you want to explore.
 
+<img width="1322" height="598" alt="image" src="https://github.com/user-attachments/assets/283c08c9-308c-446b-a243-372548941d62" />
+
+
 ## ✨ Why I Made It
 
 I created Toffu Biota as a way to combine my love for science, nature, and creative web development into one project.
